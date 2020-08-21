@@ -1,0 +1,15 @@
+{
+  "name": "oraculo",
+  "version": "1.0.0",
+  "description": "Una enseñanza para cada día... Generador aleatorio de frases que calan el subconsciente.",
+  "main": "app.js",
+  "dependencies": {
+    "axios": "^0.20.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

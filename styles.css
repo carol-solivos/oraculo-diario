@@ -1,0 +1,25 @@
+.google-translate {
+	display: inline-block;
+	vertical-align: top;
+	padding-top: 15px;
+}
+
+.goog-logo-link {
+	display: none !important;
+}
+
+.goog-te-gadget {
+	color: transparent !important;
+}
+
+#google_translate_element {
+	display: none;
+}
+
+.goog-te-banner-frame.skiptranslate {
+	display: none !important;
+}
+
+body {
+	top: 0px !important;
+}
