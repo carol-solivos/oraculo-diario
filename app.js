@@ -3,7 +3,7 @@ class Translate {
 	constructor() {
 	}
 }
-let container = document.getElementById("container");
+let container = document.getElementById("text");
 
 let api = async () => {
 	let data = await fetch("https://type.fit/api/quotes").then(x => {
@@ -21,7 +21,7 @@ let api = async () => {
 document.getElementById("ask").addEventListener("click", api);
 
 
-let translate = async () => {
+async function translate() {
 	let translate = await new google.translate.TranslateElement(
 		{
 			pageLanguage: 'en',
