@@ -1,3 +1,7 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
 body {
 	top: 0px !important;
 	background-color: black;
@@ -19,16 +23,22 @@ button {
 	border: none;
 	font-family: 'Baloo Tamma 2', cursive;
 	font-size: 24px;
-	line-height: 29px;
-	text-align: left;
-	padding: 30px 24px 30px 36px;
+	line-height: 26px;
+	padding: 30px;
+	padding-left: 24px;
 	box-shadow: none;
 	transition: box-shadow 1s ease-out;
+	transform: scale(1);
 }
 
 button:hover {
 	box-shadow: 0px 0px 70px white;
 	transition: box-shadow 2s ease;
+}
+
+button.scale {
+	transform: scale(0);
+	transition: transform .6s ease;
 }
 
 .container {
