@@ -15,6 +15,15 @@ h1, h4 {
   animation: glow 3s ease-in-out infinite alternate;
 }
 
+h1 {
+    font-size: 36px;
+}
+
+h4 {
+	font-size: 24px;
+	font-weight: 400;
+}
+
 button {
 	width: 180px;
 	height: 180px;
@@ -23,17 +32,27 @@ button {
 	border: none;
 	font-family: 'Baloo Tamma 2', cursive;
 	font-size: 24px;
+	font-weight: 600;
 	line-height: 26px;
+	background-color: white;
 	padding: 30px;
 	padding-left: 24px;
 	box-shadow: none;
 	transition: box-shadow 1s ease-out;
 	transform: scale(1);
+	text-decoration: none;
+	-webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:focus {
+	outline: 0;
 }
 
 button:hover {
 	box-shadow: 0px 0px 70px white;
 	transition: box-shadow 2s ease;
+	background-color: white;
 }
 
 button.scale {
@@ -46,34 +65,20 @@ button.scale {
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
-	width: 60%;
+	width: 70%;
 	height: 96vh;
-	min-width: 500px;
+	min-width: 350px;
 	margin: auto;
+	padding: 20px 40px;
 }
 
-.google-translate {
-	display: inline-block;
-	vertical-align: top;
-	padding-top: 15px;
+#back {
+	position: absolute;
+	bottom: 10%;
+	right: 6%;
+	cursor: pointer;
+	font-size: 21px;
 }
-
-.goog-logo-link {
-	display: none !important;
-}
-
-.goog-te-gadget {
-	color: transparent !important;
-}
-
-#google_translate_element {
-	display: none;
-}
-
-.goog-te-banner-frame.skiptranslate {
-	display: none !important;
-}
-
 
 @keyframes glow {
   from {
