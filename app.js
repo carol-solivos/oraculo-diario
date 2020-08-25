@@ -25,11 +25,18 @@ document.addEventListener("mousemove", (e)=>{
 	cursor.style.top = y + "px";
 })
 
+document.addEventListener("click", (e)=>{
+	cursor.classList.add('clicked');
+	setTimeout(() => {
+		cursor.classList.remove('clicked');
+	}, 1500)
+})
+
 let initBtn = async () => {
 	let btn = document.getElementById("ask");
 	back.style.opacity = "1"
 	btn.classList.add("scale");
-	setTimeout(() => btn.style.display = "none", 600);
+	setTimeout(() => btn.style.display = "none", 800);
 	setTimeout(() => { showData() }, 1000)
 }
 

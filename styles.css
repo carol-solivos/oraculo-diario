@@ -3,7 +3,6 @@
 	box-sizing: border-box;
 }
 body {
-	top: 0px !important;
 	background-color: black;
 	color: white;
 	font-family: 'Baloo Tamma 2', cursive;
@@ -30,12 +29,26 @@ h4 {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	background-color: white;
-	filter: blur(4px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(255,255,255,.3);
 	border-radius: 50%;
 	-webkit-animation: glow-cursor 2.5s infinite alternate;
   -moz-animation: glow-cursor 2.5s infinite alternate;
   animation: glow-cursor 2.5s infinite alternate;
+}
+
+#cursor::before {
+	position: absolute;
+	content: '';
+	border-radius: 50%;
+}
+
+.clicked#cursor::before {
+	-webkit-animation: dropsCursor 1.5s ease-out;
+  -moz-animation: dropsCursor 1.5s ease-out;
+  animation: dropsCursor 1.5s ease-out;
 }
 
 #ask {
@@ -51,7 +64,7 @@ h4 {
 
 #ask.scale {
 	transform: scale(0);
-	transition: transform .6s ease;
+	transition: transform .8s ease-in;
 }
 
 #ask::before {
@@ -146,6 +159,19 @@ button:hover {
   }
   to {
     box-shadow: 0 0 50px 20px rgba(255,255,255,.8);
+  }
+}
+
+@keyframes dropsCursor {
+	from {
+    width: 0px;
+		height: 0px;
+		border: 2px solid rgba(255,255,255,.5);
+  }
+  to {
+		width: 80px;
+    height: 80px;
+		border: 0px solid rgba(255,255,255,0);
   }
 }
 
