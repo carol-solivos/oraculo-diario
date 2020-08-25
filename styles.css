@@ -33,12 +33,16 @@ h4 {
 	background-color: white;
 	filter: blur(4px);
 	border-radius: 50%;
-	-webkit-animation: glow-cursor 3s infinite alternate;
-  -moz-animation: glow-cursor 3s infinite alternate;
-  animation: glow-cursor 3s infinite alternate;
+	-webkit-animation: glow-cursor 2.5s infinite alternate;
+  -moz-animation: glow-cursor 2.5s infinite alternate;
+  animation: glow-cursor 2.5s infinite alternate;
 }
 
 #ask {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	border-radius: 50%;
 	-webkit-animation: glow-box 8s infinite alternate;
   -moz-animation: glow-box 8s infinite alternate;
@@ -48,6 +52,25 @@ h4 {
 #ask.scale {
 	transform: scale(0);
 	transition: transform .6s ease;
+}
+
+#ask::before {
+	position: absolute;
+	content: '';
+	border-radius: 50%;
+	-webkit-animation: drops 3s infinite ease-out;
+  -moz-animation: drops 3s infinite ease-out;
+  animation: drops 3s infinite ease-out;
+}
+
+#ask::after {
+	position: absolute;
+	content: '';
+	z-index: -1;
+	border-radius: 50%;
+	-webkit-animation: drops2 3s infinite ease-out;
+  -moz-animation: drops2 3s infinite ease-out;
+  animation: drops2 3s infinite ease-out;
 }
 
 button {
@@ -64,7 +87,7 @@ button {
 	padding: 30px;
 	padding-left: 24px;
 	box-shadow: none;
-	transition: box-shadow .8s ease-out;
+	transition: box-shadow .8s ease-out, transform .8s ease-out;
 	transform: scale(1);
 	text-decoration: none;
 	-webkit-appearance: none;
@@ -77,7 +100,8 @@ button:focus {
 
 button:hover {
 	box-shadow: 0px 0px 50px -10px white;
-	transition: box-shadow .8s ease;
+	transform: scale(1.15);
+	transition: box-shadow .8s ease, transform .8s ease-out;
 	background-color: white;
 }
 
@@ -121,7 +145,33 @@ button:hover {
     box-shadow: 0 0 30px 5px rgba(255,255,255,.5);
   }
   to {
-    box-shadow: 0 0 50px 20px rgba(255,255,255,1);
+    box-shadow: 0 0 50px 20px rgba(255,255,255,.8);
+  }
+}
+
+@keyframes drops {
+	from {
+    width: 95%;
+		height: 95%;
+		border: 2px solid rgba(255,255,255,.5);
+  }
+  to {
+		width: 200%;
+    height: 200%;
+		border: 0px solid rgba(255,255,255,0);
+  }
+}
+
+@keyframes drops2 {
+	from {
+    width: 90%;
+		height: 90%;
+		border: 2px solid rgba(255,255,255,.8);
+  }
+  to {
+		width: 150%;
+    height: 150%;
+		border: 1px solid rgba(255,255,255,0);
   }
 }
 
@@ -151,5 +201,11 @@ button:hover {
 	to {
 		transform: translate(0px,0px);
 		opacity: 1;
+	}
+}
+
+@media (max-width: 500px) {
+	.container {
+		width: 100%;
 	}
 }
