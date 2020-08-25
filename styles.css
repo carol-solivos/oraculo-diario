@@ -24,6 +24,20 @@ h4 {
 	font-weight: 400;
 }
 
+#cursor {
+	height: 5px;
+	width: 5px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	background-color: white;
+	filter: blur(4px);
+	border-radius: 50%;
+	-webkit-animation: glow-cursor 3s infinite alternate;
+  -moz-animation: glow-cursor 3s infinite alternate;
+  animation: glow-cursor 3s infinite alternate;
+}
+
 #ask {
 	border-radius: 50%;
 	-webkit-animation: glow-box 8s infinite alternate;
@@ -62,8 +76,8 @@ button:focus {
 }
 
 button:hover {
-	box-shadow: 0px 0px 50px -10px white !important;
-	transition: box-shadow .8s ease !important;
+	box-shadow: 0px 0px 50px -10px white;
+	transition: box-shadow .8s ease;
 	background-color: white;
 }
 
@@ -79,8 +93,10 @@ button:hover {
 	padding: 20px 30px;
 }
 
-#text > div {
-	animation: appear-text 1s ease-out;
+#text {
+	/* animation: appear-text 1s ease-out; */
+	transform: translate(100px,-10px);
+	transition: transform 1s ease-out;
 }
 
 #back {
@@ -99,6 +115,15 @@ button:hover {
   }
   to {
     text-shadow: 0 0 20px rgba(255,255,255,1);
+  }
+}
+
+@keyframes glow-cursor {
+  from {
+    box-shadow: 0 0 30px 5px rgba(255,255,255,.5);
+  }
+  to {
+    box-shadow: 0 0 50px 20px rgba(255,255,255,1);
   }
 }
 

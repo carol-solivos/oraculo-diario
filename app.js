@@ -4,9 +4,18 @@ class Translate {
 	}
 }
 
-let container = document.getElementById("text");
+
+let text = document.getElementById("text");
 let back = document.getElementById("back");
+let cursor = document.getElementById("cursor");
 let data;
+
+document.addEventListener("mousemove", (e)=>{
+	let x = e.clientX;
+	let y = e.clientY;
+	cursor.style.left = x + "px";
+	cursor.style.top = y + "px";
+})
 
 (
 	async function api() {
@@ -24,17 +33,28 @@ let initBtn = async () => {
 	setTimeout(() => { showData() }, 1000)
 }
 
+let reload = async () => {
+	setTimeout(() => btn.style.display = "none", 600);
+}
+
 let showData = () => {
+		text.style.transform = "translate(100px,-10px)"
 	let random = Math.floor(Math.random() * data.length);
-	container.innerHTML = 
-		`<div><h1>"${data[random].text}"</h1>
+	text.innerHTML = 
+		`<div id="text-child"><h1>"${data[random].text}"</h1>
 		<h4>- ${data[random].author || "Anónimo"}</h4></div>`
+	
+		// let textChild = document.getElementById("text-child");
+		text.style.transform = "translate(0px,0px)"
+	// setTimeout(() => { textChild.style.transform = "translate(0px,0px)" }, 100)
+
+		
 
 }
 
 
 document.getElementById("ask-btn").addEventListener("click", initBtn);
-back.addEventListener("click", showData);
+back.addEventListener("click", reload);
 
 
 // var gl; // Un variable global para el contexto WebGL
