@@ -93,10 +93,8 @@ button:hover {
 	padding: 20px 30px;
 }
 
-#text {
-	/* animation: appear-text 1s ease-out; */
-	transform: translate(100px,-10px);
-	transition: transform 1s ease-out;
+#text-child{
+	animation: appear-text 1s ease-out;
 }
 
 #back {
@@ -114,7 +112,7 @@ button:hover {
     text-shadow: 0 0 3px rgba(255,255,255,.5);
   }
   to {
-    text-shadow: 0 0 20px rgba(255,255,255,1);
+    text-shadow: 0 0 10px rgba(255,255,255,1);
   }
 }
 
@@ -148,8 +146,10 @@ button:hover {
 @keyframes appear-text {
 	from {
 		transform: translate(100px,-10px);
+		opacity: 0;
 	}
 	to {
 		transform: translate(0px,0px);
+		opacity: 1;
 	}
 }
