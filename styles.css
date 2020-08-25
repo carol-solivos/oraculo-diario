@@ -10,9 +10,9 @@ body {
 }
 
 h1, h4 {
-	-webkit-animation: glow 3s ease-in-out infinite alternate;
-  -moz-animation: glow 3s ease-in-out infinite alternate;
-  animation: glow 3s ease-in-out infinite alternate;
+	-webkit-animation: glow 2.5s ease-out infinite alternate;
+  -moz-animation: glow 2.5s ease-out infinite alternate;
+  animation: glow 2.5s ease-out infinite alternate;
 }
 
 h1 {
@@ -72,10 +72,14 @@ button.scale {
 	padding: 20px 40px;
 }
 
+#text > div {
+	animation: appear-text 1s ease-out;
+}
+
 #back {
 	position: absolute;
-	bottom: 10%;
-	right: 6%;
+	bottom: 8%;
+	right: 4%;
 	cursor: pointer;
 	font-size: 21px;
 }
@@ -87,4 +91,13 @@ button.scale {
   to {
     text-shadow: 0 0 20px rgba(255,255,255,1);
   }
+}
+
+@keyframes appear-text {
+	from {
+		transform: translate(100px,-10px);
+	}
+	to {
+		transform: translate(0px,0px);
+	}
 }
