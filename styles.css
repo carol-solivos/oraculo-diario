@@ -131,6 +131,7 @@ button:hover {
 }
 
 #text-child{
+	position: absolute;
 	animation: appear-text 1s ease-out;
 }
 
