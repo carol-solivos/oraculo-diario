@@ -1,10 +1,4 @@
 
-class Translate {
-	constructor() {
-	}
-}
-
-
 let text = document.getElementById("text");
 let back = document.getElementById("back");
 let cursor = document.getElementById("cursor");
@@ -15,24 +9,6 @@ let data;
 		data = await fetch("https://type.fit/api/quotes").then(x => {
 			return x.json();
 		})
-	}
-)();
-
-(
-	function start() {
-		let gl; // Un variable global para el contexto WebGL
-		var canvas = document.getElementById("glcanvas");
-		
-		gl = initWebGL(canvas);      // Inicializar el contexto GL
-		
-		// Solo continuar si WebGL esta disponible y trabajando
-		
-		if (gl) {
-			gl.clearColor(1.0, 0.0, 0.0, 0.5);                      // Establecer el color base en negro, totalmente opaco
-			gl.enable(gl.DEPTH_TEST);                               // Habilitar prueba de profundidad
-			gl.depthFunc(gl.LEQUAL);                                // Objetos cercanos opacan objetos lejanos
-			gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);      // Limpiar el buffer de color asi como el de profundidad
-		}
 	}
 )();
 
